@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: xr709wama-go-gitops
+  description: This is GitOps manifest for xr709wama-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=xr709wama-go
+    backstage.io/kubernetes-id: xr709wama-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: xr709wama-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:xr709wama-go
